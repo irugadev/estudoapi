@@ -3,7 +3,15 @@ $(document).ready(function () {
     const listaMoedas = $("#lista-moedas")
     const carregando = $("#loading")
     const apiURL = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas?$top=100&$format=json"
-    const dataHoje = "09-03-2025"
+    //const dataHoje = "09-03-2025"
+
+    const hoje = new Date()
+    const dia = hoje.getDate()
+    const mes = hoje.getMonth() + 1
+    const ano = hoje.getFullYear()
+
+    const dataHoje = `${mes}-${dia}-${ano}`
+    console.log(dataHoje)
 
     function buscarMoedas() {
         carregando.show()
